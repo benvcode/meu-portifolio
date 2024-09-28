@@ -1,0 +1,20 @@
+// components/header.scss
+
+@use '../abstracts' as *;
+
+
+// Mobile First
+//
+.hero {}
+
+// Todos os tamanhos de tela
+//
+@include mq-size-up($bp-all) {
+   .hero {}
+}
+
+// Outros tamanhos de tela...
+//
+@include mq-size-up($bp-tablet-landscape) {
+   .hero {}
+}

@@ -1,0 +1,49 @@
+// pages/main.scss
+
+@use '../abstracts' as *;
+
+// Mobile First
+//
+@include mq-size-until($bp-tablet-landscape) {
+   .main {}
+}
+
+// Todos os tamanhos de tela
+//
+@include mq-size-up($bp-all) {
+   .main {}
+
+}
+
+// Outros tamnhos de tela...
+//
+@include mq-size-up($bp-tablet-landscape) {
+   .main {
+      .wrapper-one {
+
+         &__container {
+            display: grid;
+            // Duas colunas, cada uma ocupando metade da largura
+            grid-template-columns: repeat(2, 1fr);
+            gap: $space-xl;
+            align-items: start;
+
+            .nbs-col-1 {
+               position: sticky;
+               // para Safari
+               position: -webkit-sticky;
+               top: 80px;
+               // Centralização horizontal e vertical do conteúdo dentro da coluna.
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               min-height: calc(100vh - 80px);
+            }
+
+            .nbs-col-2 {
+               min-height: 100vh;
+            }
+         }
+      }
+   }
+}

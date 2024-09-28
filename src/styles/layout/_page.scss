@@ -1,0 +1,43 @@
+// layout/page.scss
+
+@use '../abstracts/spacing' as *;
+
+body {
+    overflow-x: hidden;
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer ";
+
+    header {
+        grid-area: header;
+        position: sticky;
+        top: 0;
+        z-index: 1; // Define a ordem de empilhamento, garantindo que o header sobreponha outros elementos
+    }
+
+    main {
+        grid-area: main;
+        min-height: 100vh;
+    }
+
+    footer {
+        grid-area: footer;
+        //position: sticky;
+        //bottom: 0;
+        //z-index: 1;
+    }
+
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 12px $space-responsive-m-to-5xl;
+    }
+
+    .section {
+        width: 100%;
+        padding-top: $space-m;
+        padding-bottom: $space-m;
+    }
+}

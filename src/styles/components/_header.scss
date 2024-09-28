@@ -1,0 +1,46 @@
+// components/header.scss
+
+@use '../abstracts' as *;
+
+// Mobile First
+//
+@include mq-size-until($bp-tablet-landscape) {
+   .header {}
+}
+
+// Todos os tamanhos de tela
+//
+@include mq-size-up($bp-all) {
+   .header {
+      background: var(--bg-secondary); // Define o background padrão (modo "light")
+
+      border-bottom: 1px solid var(--separator);
+      //box-shadow: var(--box-shadow-01);
+
+      &__logo-text {
+         color: var(--text-primary);
+      }
+
+      @include theme-dark {
+         background: var(--bg-primary); // Sobrescreve o background no modo "dark"
+      }
+   }
+}
+
+
+// Outros tamanhos de tela...
+//
+@include mq-size-up($bp-tablet-landscape) {
+   .header {
+
+      &__content {}
+
+      &__hamb-menu {
+         display: none;
+      }
+
+      &__toggle-theme {
+         order: 3;
+      }
+   }
+}

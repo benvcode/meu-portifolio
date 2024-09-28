@@ -1,0 +1,19 @@
+// components/project-card/depoiment-card.scss
+
+.card {
+   max-width: 100%;
+   border: none;
+   border-radius: 0;
+   //box-shadow: var(--box-shadow-02);
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+   background: var(--bg-secondary);
+
+   z-index: 9999px;
+
+   &:hover {
+      cursor: pointer;
+      transform: scale(1.025);
+      //box-shadow: var(--box-shadow-03);
+   }
+
+}

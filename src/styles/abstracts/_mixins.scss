@@ -1,0 +1,44 @@
+// abstracts/mixins.scss
+
+// Media query para larguras menores ou iguais ao valor especificado
+@mixin mq-size-until($range) {
+   @media (max-width: $range) {
+      @content;
+   }
+}
+
+// Media query para larguras maiores que o valor especificado
+@mixin mq-size-up($range) {
+   @media (min-width: #{$range + 1}) {
+      @content;
+   }
+}
+
+// Aplica estilos quando o tema é "dark"
+@mixin theme-dark {
+   [data-theme="dark"] & {
+      @content;
+   }
+}
+
+// Customiza o gradiente linear
+@mixin custom-bg-linear-gradient($direction, $list-color, $optinos...) {
+   background: -webkit-linear-gradient($direction, $list-color), $optinos;
+   background: -moz-linear-gradient($direction, $list-color), $optinos;
+   background: -o-linear-gradient($direction, $list-color), $optinos;
+   background: linear-gradient($direction, $list-color), $optinos;
+}
+
+// Gera variáveis CSS customizadas a partir de um mapa de temas
+@mixin custom-css-variables-theme($theme) {
+   @each $key, $value in $theme {
+      --#{$key}: #{$value};
+   }
+}
+
+// Gera variáveis SASS customizadas a partir de um mapa de temas
+@mixin custom-sass-variables-theme($theme) {
+   @each $key, $value in $theme {
+      #{$key}: $value;
+   }
+}

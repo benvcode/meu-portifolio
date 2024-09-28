@@ -1,0 +1,9 @@
+// utilities/width.scss
+
+.u-full-width {
+   // 'width: 100vw;' problemático por causa da barra de rolagem
+   width: auto; // será definido pelo javascript
+   position: relative;
+   left: 50%;
+   transform: translateX(-50%);
+}

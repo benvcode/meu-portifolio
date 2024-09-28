@@ -1,0 +1,104 @@
+// pages/home.scss
+
+@use '../abstracts' as *;
+
+// Mobile First
+//
+@include mq-size-until($bp-tablet-landscape) {
+
+   // About
+   .about {}
+
+   // Projects
+   .projects {}
+
+}
+
+// Todos os tamanhos de tela
+//
+@include mq-size-up($bp-all) {
+   .about {
+
+      &__title {
+         color: var(--primary);
+      }
+
+      p {
+         max-width: 30rem;
+      }
+
+      &__social-link {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-wrap: wrap;
+         gap: $space-xs;
+         font-size: .875rem;
+         color: var(--link-01);
+
+         &:hover {
+            color: var(--link-01-hover)
+         }
+      }
+
+      img {
+         filter: grayscale(90%);
+      }
+   }
+
+   .depoiments {
+      .swiper {
+         z-index: -2; // Garante que o Swiper fique atrás do menu
+      }
+   }
+
+   .skills {
+      &__item {
+         background: var(--bg-secondary);
+
+         @include theme-dark {
+            background: var(--white); // Sobrescreve o background no modo "dark"
+         }
+
+         border-radius: 9999px;
+         padding: $space-xs;
+         animation: growShrinkMove 5s ease-in-out infinite;
+
+         &:not(:last-child) {
+            margin: $space-s;
+         }
+
+         img {
+            width: 24px;
+            height: 24px;
+         }
+      }
+   }
+
+   .projects {}
+
+}
+
+// Outros tamanhos de tela...
+//
+@include mq-size-up($bp-tablet-landscape) {
+
+   .about {}
+
+   .projects {}
+
+
+}
+
+
+@keyframes growShrinkMove {
+
+   0%,
+   100% {
+      transform: scale(1.05) translateX(0);
+   }
+
+   50% {
+      transform: scale(0.8) translateX(10px); // Combine as transformações
+   }
+}

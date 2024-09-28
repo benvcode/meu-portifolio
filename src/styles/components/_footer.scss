@@ -1,0 +1,27 @@
+// components/footer.scss
+
+@use '../abstracts' as *;
+
+
+// Mobile First
+//
+@include mq-size-until($bp-tablet-landscape) {
+   .footer {}
+}
+
+// Todos os tamanhos de tela
+//
+@include mq-size-up($bp-all) {
+   .footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--separator);
+
+   }
+}
+
+
+// Outros tamanhos de tela..
+//
+@include mq-size-up($bp-tablet-landscape) {
+   .footer {}
+}

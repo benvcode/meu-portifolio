@@ -1,0 +1,72 @@
+// components/nav.scss
+
+@use '../abstracts' as *;
+
+
+// Mobile First
+//
+@include mq-size-until($bp-tablet-landscape) {
+   .nbs-navbar {
+      &__menu {
+         background: var(--bg-secondary);
+         position: absolute;
+         padding: $space-m;
+         right: 0;
+         left: 0;
+         top: 0;
+         //width: 15rem;
+         //max-width: 78%;
+         height: 60vh;
+         display: none;
+         z-index: -1; // Define a ordem de empilhamento, garantindo que elementos(logo, hamb, toggle-theme) sobreponha o menu
+         border-bottom: 1px solid var(--separator);
+
+
+         &-item {
+            text-align: center;
+            margin-bottom: $space-xs;
+         }
+
+         &-list {
+            margin-top: $space-3xl;
+         }
+
+         &-link {
+            color: var(--link-01);
+            font-size: 0.938rem;
+
+            &:hover {
+               color: var(--link-01-hover);
+            }
+         }
+
+         &.active {
+            display: block;
+         }
+      }
+
+      &__body-overlay {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100vh;
+         background: var(--body-bg-overlay);
+         display: none;
+         z-index: -2; // Define a ordem de empilhamento,garantindo que o menu sobreponha o overlay 
+      }
+   }
+}
+
+// Todos os tamanhos de tela
+//
+@include mq-size-up($bp-all) {}
+
+
+// Outros tamanhos de tela...
+//
+@include mq-size-up($bp-tablet-landscape) {
+   .nbs-navbar {
+      display: none;
+   }
+}

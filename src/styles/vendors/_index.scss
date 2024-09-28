@@ -1,0 +1,11 @@
+// vendors/index.scss
+
+// FontAwesome
+@forward 'fontawesome/all.min';
+
+// Bootsrap v5.3.3
+@import 'bootstrap/custom'; // required after 'bootsrap' import
+@import 'bootstrap/scss/bootstrap';
+
+
+//@use e @forward ainda não funcionam no Bootstrap[https://github.com/twbs/bootstrap/issues/30025#issuecomment-574825600]

@@ -1,0 +1,102 @@
+// boostrap/custom.scss
+
+@import '../../themes/theme';
+
+// Necessário para obter funções e variáveis do Bootstrap
+
+@import "scss/functions";
+@import "scss/variables";
+@import "scss/maps";
+@import 'scss/mixins';
+@import "scss/utilities";
+
+// Theme(Light & Dark)
+//
+$nbs-primary-light: map-get($light-theme, "primary");
+$nbs-secondary-light: map-get($light-theme, "secondary");
+$nbs-custom-secondary-light: map-get($light-theme, "custom-secondary");
+
+$theme-colors: map-merge($theme-colors, ("primary": $nbs-primary-light));
+$theme-colors: map-merge($theme-colors, ("secondary":$nbs-secondary-light));
+$theme-colors: map-merge($theme-colors, ("custom-secondary":$nbs-custom-secondary-light));
+// ex., class="btn-custom-secondary"
+
+:root,
+[data-bs-theme="light"] {
+   --bs-primary: #{var(--primary)};
+
+   @each $color, $value in $theme-colors {
+      --#{$prefix}#{$color}: #{$value};
+   }
+
+   .text-custom-secondary {
+      color: #{var(--custom-secondary)};
+   }
+}
+
+// Dark
+//
+$nbs-primary-dark: map-get($dark-theme, "primary");
+$nbs-secondary-dark: map-get($dark-theme, "secondary");
+$nbs-custom-secondary-dark: map-get($dark-theme, "custom-secondary");
+
+[data-bs-theme="dark"] {
+   color-scheme: dark;
+   --bs-primary: #{var(--primary)};
+
+   .text-custom-secondary {
+      color: #{var(--custom-secondary)};
+   }
+
+   .text-primary {
+      color: #{var(--primary)} !important;
+   }
+
+   .btn-primary {
+      --bs-btn-color: #{var(--text-primary-inversed)};
+      --bs-btn-border-color: #{var(--primary)};
+      --bs-btn-bg: #{var(--primary)};
+      --bs-btn-hover-bg: #{shade-color($nbs-primary-dark, 10%)};
+      --bs-btn-hover-color: #{var(--text-primary-inversed)};
+      --bs-btn-hover-border-color: #{shade-color($nbs-primary-dark, 10%)};
+      --bs-btn-active-color: #{var(--text-primary-inversed)};
+      --bs-btn-active-bg: #{shade-color($nbs-primary-dark, 20%)};
+      --bs-btn-active-border-color: #{shade-color($nbs-primary-dark, 20%)};
+   }
+
+   .btn-secondary {
+      --bs-btn-color: #{var(--text-primary-inversed)};
+      --bs-btn-border-color: #{var(--secondary)};
+      --bs-btn-bg: #{var(--secondary)};
+      --bs-btn-hover-bg: #{shade-color($nbs-secondary-dark, 10%)};
+      --bs-btn-hover-color: #{var(--text-primary-inversed)};
+      --bs-btn-hover-border-color: #{shade-color($nbs-secondary-dark, 10%)};
+      --bs-btn-active-color: #{var(--text-primary-inversed)};
+      --bs-btn-active-bg: #{shade-color($nbs-secondary-dark, 20%)};
+      --bs-btn-active-border-color: #{shade-color($nbs-secondary-dark, 20%)};
+   }
+
+   .btn-custom-secondary {
+      --bs-btn-color: #{var(--text-primary-inversed)};
+      --bs-btn-border-color: #{var(--custom-secondary)};
+      --bs-btn-bg: #{var(--custom-secondary)};
+      --bs-btn-hover-bg: #{shade-color($nbs-custom-secondary-dark, 10%)};
+      --bs-btn-hover-color: #{var(--text-primary-inversed)};
+      --bs-btn-hover-border-color: #{shade-color($nbs-custom-secondary-dark, 10%)};
+      --bs-btn-active-color: #{var(--text-primary-inversed)};
+      --bs-btn-active-bg: #{shade-color($nbs-custom-secondary-dark, 20%)};
+      --bs-btn-active-border-color: #{shade-color($nbs-custom-secondary-dark, 20%)};
+   }
+}
+
+$body-color-dark: map-get($dark-theme, "text-primary");
+$body-bg-dark: map-get($dark-theme, "bg-primary");
+$body-secondary-color-dark: map-get($dark-theme, "text-secondary");
+
+
+// Borders
+//
+$border-color: #{var(--separator)};
+
+// Input
+// ...

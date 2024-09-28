@@ -1,0 +1,29 @@
+// scss/base.scss
+
+
+
+@use '../abstracts' as *;
+
+
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   color: var(--text-primary);
+   background: var(--bg-primary);
+
+   &::-webkit-scrollbar {
+      width: .60rem;
+      border-radius: .5rem;
+   }
+
+   &::-webkit-scrollbar-thumb {
+      background-color: var(--primary);
+      border-radius: .5rem;
+   }
+}
+
+a {
+   text-decoration: none;
+}

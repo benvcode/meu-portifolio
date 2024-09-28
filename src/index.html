@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="light" data-bs-theme="light">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Favicons -->
+   <link rel="icon" type="image/png" sizes="16x16"
+      href="<%= require('./assets/img/icons/favicons/favicon-16x16.png') %>">
+   <link rel="icon" type="image/png" sizes="32x32"
+      href="<%= require('./assets/img/icons/favicons/favicon-32x32.png') %>">
+   <link rel="icon" type="image/png" sizes="48x48"
+      href="<%= require('./assets/img/icons/favicons/favicon-48x48.png') %>">
+   <link rel="icon" type="image/png" sizes="64x64"
+      href="<%= require('./assets/img/icons/favicons/favicon-64x64.png') %>">
+   <link rel="icon" type="image/png" sizes="128x128"
+      href="<%= require('./assets/img/icons/favicons/favicon-128x128.png') %>">
+   <link rel="icon" type="image/png" sizes="256x256"
+      href="<%= require('./assets/img/icons/favicons/favicon-256x256.png') %>">
+   <link rel="apple-touch-icon" sizes="152x152"
+      href="<%= require('./assets/img/icons/favicons/apple-touch-icon.png') %>">
+   <link rel="icon" type="image/png" sizes="192x192"
+      href="<%= require('./assets/img/icons/favicons/android-chrome-192x192.png') %>">
+   <link rel="icon" type="image/png" sizes="512x512"
+      href="<%= require('./assets/img/icons/favicons/android-chrome-512x512.png') %>">
+   <link rel="manifest" href="site.webmanifest">
+
+   <title>Meu Portifólio</title>
+</head>
+
+<section class="app">
+
+   <body style="visibility: hidden">
+      <!-- Header -->
+      <header class="header">
+         <div class="container">
+            <div class="header__content d-flex justify-content-between">
+               <a href="#">
+                  <p class="header__logo-text headline">Benv<span class="text-primary">Xavier</span></p>
+               </a>
+
+               <button class="btn header__hamb-menu p-0 border-0 order-2" aria-label="Hamburger menu"
+                  data-btn="hamb-menu">
+                  <i class="fa-regular fa-bars fa-lg" data-icon="hamb-menu-icon"></i>
+               </button>
+
+               <button class="btn header__toggle-theme p-0 border-0" aria-label="Change to light theme"
+                  data-btn="theme-toggle">
+                  <i class="fa-solid fa-sun-bright"></i>
+               </button>
+
+               <!-- Navbar -->
+               <nav class="nbs-navbar">
+                  <div class="nbs-navbar__body-overlay"></div>
+                  <div class="nbs-navbar__menu">
+                     <ul class="nbs-navbar__menu-list">
+                        <li class="nbs-navbar__menu-item"><a class="nbs-navbar__menu-link" href="#skills">MINHAS
+                              HABILIDADES</a></li>
+                        <li class="nbs-navbar__menu-item"><a class="nbs-navbar__menu-link"
+                              href="#projects">PROJECTOS</a>
+                        </li>
+                     </ul>
+                  </div>
+               </nav>
+            </div>
+         </div>
+
+      </header>
+
+      <!-- Main -->
+      <main class="main">
+         <!-- Main wrapper one -->
+         <!-- <section class="main__wrapper-one">
+         <div class="container">
+            <section class="hero  section">
+               <div class="hero__content">Hero</div>
+            </section>
+         </div>
+      </section> -->
+
+         <!-- Main wrapper tewo -->
+         <section class="main__wrapper-two pt-3">
+            <!-- <div class="wrapper-one__container container d-flex flex-column"> -->
+            <div class="wrapper-one__container container grid">
+               <!-- nbs-col-1 -->
+               <div class="nbs-col-1 d-flex flex-column">
+                  <!-- About -->
+                  <section class="about section">
+                     <div class="about__intro">
+                        <h1 class="display-1 about__title">Benvindo Xavier</h1>
+                        <!-- <h1>Benvindo Xavier</h1> -->
+
+                        <p class="">Desenvolvedor de
+                           Software com fundamentos em Full Stack e
+                           foco
+                           em
+                           Backend.
+                        </p>
+                     </div>
+
+                     <div class="about__profile d-flex flex-wrap align-items-center gap-4 mt-4 ">
+                        <img
+                           src="https://media.licdn.com/dms/image/v2/D4D03AQFDBh7Y-T3n_w/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1720015101427?e=1732147200&v=beta&t=1CitPPIore-3rxw1cDFjX9qSL1sYnpvQVJyAoDp9cUw"
+                           class="rounded-circle" alt="Minha Foto de perfil do LinkedIn" width="48px" height="48px">
+
+                        <ul class="about__social-list d-flex gap-4">
+                           <li>
+                              <a href="" class="about__social-link">
+                                 <i class="icon fa-brands fa-linkedin-in"></i>
+                                 <span>Linkedin</span>
+                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                              </a>
+                           </li>
+
+                           <li>
+                              <a href="" class="about__social-link">
+                                 <i class="icon roudend-full fa-brands fa-github "></i>
+                                 <span>Github</span>
+                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                              </a>
+                           </li>
+
+                           <li>
+                              <a href="" class="about__social-link">
+                                 <i class="icon roudend-full fa-brands fa-medium "></i>
+                                 <span>Meduim</span>
+                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </section>
+
+                  <!--Depoimentos -->
+                  <section id="depoiments" class="depoiments section">
+                     <div class="depoimens__content">
+                        <p class="text-body-secondary">O que falam sobre mim ?</p>
+
+                        <swiper-container pagination="true" autoplay="true" class="swiper" loop="true"
+                           allow-touch-move="false" prevent-clicks="false">
+                           <swiper-slide class="w-100">
+                              <depoiment-card
+                                 data-src="https://media.licdn.com/dms/image/v2/D4D03AQF_QzQt7fFFeg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1713533279119?e=1732147200&v=beta&t=57EUeT_MTajDgfamU0w52UVp1bYYWhj6yvwcLOIGKVY"
+                                 data-title="Solange M. Sineiro"
+                                 data-subtitle="Gestora de Projectos e Análista de Dados no Power BI"
+                                 data-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+                                 data-href="https://www.linkedin.com/in/solangesineiro/"></depoiment-card>
+                           </swiper-slide>
+
+                           <swiper-slide class="w-100">
+                              <depoiment-card
+                                 data-src="https://media.licdn.com/dms/image/v2/C5603AQHrjmN1Ifio-w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1651003931566?e=1732752000&v=beta&t=6lQnSAu79j1q75BhjliAVvombNHWnUjo1ba8OFwUPX4"
+                                 data-title="Jurema Gonçalves" data-subtitle="Programadora chez ADN LÓGICO"
+                                 data-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+                                 data-href="https://www.linkedin.com/in/jurema-gon%C3%A7alves-30a193239/"></depoiment-card>
+                           </swiper-slide>
+
+                           <swiper-slide class="w-100">
+                              <depoiment-card
+                                 data-src="https://media.licdn.com/dms/image/v2/C4D03AQG07PcFZD06Dg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1659341669818?e=1732752000&v=beta&t=JQ6VokbGRqntV8Tm5pvCuyoYDpIrvdMTFsQ1rnzqsOs"
+                                 data-href="https://www.linkedin.com/in/ivandro-sousa-b83a13108/"
+                                 data-title="Ivandro de Souza"
+                                 data-subtitle="Eng. Software 💻 | Docente 📚 | Escritor ✍🏾"
+                                 data-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.">
+                              </depoiment-card>
+                           </swiper-slide>
+
+                           <swiper-slide class="w-100">
+                              <depoiment-card
+                                 data-src="https://media.licdn.com/dms/image/v2/D4D03AQFR-TuK2MsuEw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1697536418814?e=1732147200&v=beta&t=8cTqFRc9IuwJlmR1-fTxlnZ77qmC5DmPwcLPuJeBHdc"
+                                 data-href="https://www.linkedin.com/in/soares-coxe-47175a137/" data-title="Soares Coxe"
+                                 data-subtitle=".Net Developer"
+                                 data-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.">
+                              </depoiment-card>
+                           </swiper-slide>
+
+
+                           <swiper-slide class="w-100">
+                              <depoiment-card data-src="<%= require('./assets/img/avatars/1.png') %>"
+                                 data-href="https://www.linkedin.com/in/alegria-kilanda-926341136/"
+                                 data-title="Alegria Kilanda" data-subtitle=".Net Developer"
+                                 data-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.">
+                              </depoiment-card>
+                           </swiper-slide>
+                        </swiper-container>
+
+
+                     </div>
+                  </section>
+               </div>
+
+               <!-- nbs-col-2 -->
+               <div class="nbs-col-2">
+                  <!-- Skills -->
+                  <section id="skills" class="skills section">
+                     <div class="skills__content">
+                        <h2>Minhas Habilidades</h2>
+                        <div class="skills__list-container">
+                           <a href="https://techicons.dev/">
+                              <ul class="skills__list u-flex-center flex-wrap">
+                                 <li class="skills__item"><img src="<%= require('./assets/img/icons/tech/html.png') %>"
+                                       alt="html">
+                                 </li>
+                                 <li class="skills__item"><img src="<%= require('./assets/img/icons/tech/css3.png') %>"
+                                       alt="css3">
+                                 <li class="skills__item"><img src="<%= require('./assets/img/icons/tech/js.png') %>"
+                                       alt="js">
+                                 <li class="skills__item"><img
+                                       src="<%= require('./assets/img/icons/tech/webpack.png') %>" alt="webpack">
+                                 <li class="skills__item"><img
+                                       src="<%= require('./assets/img/icons/tech/bootstrap.png') %>" alt="bootstrap">
+                                 </li>
+                                 <li class="skills__item"><img src="<%= require('./assets/img/icons/tech/uml.png') %>"
+                                       alt="uml">
+                                 </li>
+                                 <li class="skills__item"><img src="<%= require('./assets/img/icons/tech/java.png') %>"
+                                       alt="java">
+                                 </li>
+                                 <li class="skills__item"><img
+                                       src="<%= require('./assets/img/icons/tech/python.png') %>" alt="python">
+                                 </li>
+                                 <li class="skills__item"><img src="<%= require('./assets/img/icons/tech/flask.png') %>"
+                                       alt="flask">
+                                 </li>
+                                 <li class="skills__item"><img
+                                       src="<%= require('./assets/img/icons/tech/docker.png') %>" alt="docker">
+                                 </li>
+                                 <li class="skills__item"><img
+                                       src="<%= require('./assets/img/icons/tech/postgres.png') %>" alt="postgres">
+                                 </li>
+                                 <li class="skills__item"><img
+                                       src="<%= require('./assets/img/icons/tech/postman.png') %>" alt="postman">
+                                 </li>
+                                 <li class="skills__item"><img
+                                       src="<%= require('./assets/img/icons/tech/pytest.png') %>" alt="pytest">
+                                 </li>
+                                 <li class="skills__item"><img src="<%= require('./assets/img/icons/tech/git.png') %>"
+                                       alt="git">
+                                 </li>
+                                 <li class="skills__item"><img
+                                       src="<%= require('./assets/img/icons/tech/github.png') %>" alt="github">
+                                 </li>
+                                 <li class="skills__item"><img
+                                       src="<%= require('./assets/img/icons/tech/vscode.png') %>" alt="vscode">
+                                 </li>
+                                 <li class="skills__item"><img
+                                       src="<%= require('./assets/img/icons/tech/intellij.png') %>" alt="intellij">
+                                 </li>
+                                 <li class="skills__item"><img
+                                       src="<%= require('./assets/img/icons/tech/ubuntu.png') %>" alt="ubuntu">
+                                 </li>
+                              </ul>
+                           </a>
+                        </div>
+                     </div>
+                  </section>
+
+                  <!-- Projectos -->
+                  <section id="projects" class="projects section">
+                     <div class="projects__content">
+                        <h2>Projectos</h2>
+                        <div class="projects__cards d-flex flex-column gap-4">
+                           <project-card data-title="SimuTransBanc"
+                              data-text="Backend de um App que simula transações interbancárias em tempo real."
+                              data-href="#" data-technologies="Java, Spring Boot, REST API, Microserviços, Apache-Kafka, Docker, JUnit 5,
+                  Postman">
+                           </project-card>
+
+                           <project-card data-title="Meu Portifólio" data-text="Meu portfólio pessoal" data-href="#"
+                              data-technologies="HTML, CSS3, SCSS/SASS, Bootstrap, Javascript, Webpack 5, Mobile First, Native Web Components(Custom Elements API), vercel">
+                           </project-card>
+
+                           <project-card data-title="Todo List CRUD App"
+                              data-text="Um simples Aplicativo para gerenciar tarefas."
+                              data-href="https://github.com/benvcode/todolist-restapi-crud-springboot"
+                              data-technologies="Java,Spring Boot, REST API, Postman">
+                           </project-card>
+
+                           <project-card data-title="LoginApp" data-text="Backend para um sistema de autenticação."
+                              data-href="#" data-text2="Em Desenvolvimento.."
+                              data-technologies="Python, Flask, SQLSchemy, Marshmallow, Rest API, JWT Token, Postman"></project-card>
+                        </div>
+                     </div>
+                  </section>
+               </div>
+            </div>
+         </section>
+      </main>
+
+      <!-- Foooter -->
+      <footer class=" footer mt-5">
+         <div class="container">
+            <section class="footer__info section d-flex align-items-center justify-content-between p-0">
+               <div>
+                  <p class="small">Desenvolvido com
+                     &#10084;&#65039; por <span class="text-primary">Benvindo Xavier</span>
+                  </p>
+               </div>
+               <div>
+                  <p class="xsmall"><span class="fw-bold">&copy; BenvCode</span> 2024 Todos os direitos
+                     reservados.
+                  </p>
+               </div>
+            </section>
+         </div>
+      </footer>
+</section>
+</body>
+
+</html>

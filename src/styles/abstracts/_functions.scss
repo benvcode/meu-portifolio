@@ -1,0 +1,38 @@
+// abstracts/functions.scss
+
+@use 'sass:math';
+@use "../vendors/material-design/shadows" as md;
+
+// Converte pixels para rem
+@function toRem($sizePx) {
+   @return math.div($sizePx, 16px) * 1rem;
+}
+
+// Gera tamanho de fonte com base na escala modular
+// em(n) = baseSize × ratio^expo
+@function typeScale($baseSize, $ratio, $expo) {
+   $baseSize: toRem($baseSize);
+   @return $baseSize * (math.pow($ratio, $expo));
+}
+
+// Função clamp personalizada
+@function clamped($minWidth, $maxWidth, $minValue, $maxValue) {
+   $slope: math.div(($maxValue - $minValue ), ($maxWidth - $minWidth));
+   $interceptRem : toRem(-$minWidth * $slope + $minValue);
+
+   $minRem: toRem($minValue);
+   $maxRem: toRem($maxValue);
+
+   @return clamp(#{$minRem}, #{$interceptRem} + #{$slope * 100}vw, #{$maxRem});
+}
+
+// Gera uma sombra personalizada
+@function custom-box-shadow($level, $color) {
+   @return md.shadow($level, $color);
+}
+
+// Obtém uma cor de um mapa de cores
+@function get-color($color-map, $category, $key) {
+   $category-map: map-get($color-map, $category);
+   @return map-get($category-map, $key);
+}

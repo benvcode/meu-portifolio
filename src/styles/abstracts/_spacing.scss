@@ -1,0 +1,18 @@
+// abstracts/spacing.scss
+
+@use 'functions' as func;
+@use 'breakpoints' as *;
+
+$space-5xl: 5rem; //96px;
+$space-4xl: 4rem; //64px;
+$space-3xl: 3.5rem; //48px;
+$space-2xl: 3rem; //40px;
+$space-xl: 2rem; //32px;
+$space-l: 1.5rem; //24px;
+$space-m: 1rem; //16px;
+$space-s: .75rem; //12px;
+$space-xs: .5rem; //8px;
+$space-2xs: .25rem; //4px;
+$space-3xs: .125rem; //2px;
+
+$space-responsive-m-to-5xl: #{func.clamped($bp-phone, $bp-tablet-landscape, 16px, 96px)};

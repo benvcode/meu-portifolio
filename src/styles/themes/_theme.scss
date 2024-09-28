@@ -1,0 +1,73 @@
+// themems/theme.scss
+@use '../abstracts' as *;
+
+
+$light-theme: (
+   primary: get-color($clr, 'primary', 500),
+   secondary: get-color($clr, 'neutral', 500),
+   custom-secondary: get-color($clr, 'secondary', 500),
+   dark: get-color($clr, 'neutral', 700),
+   white:get-color($clr, 'neutral', 0),
+
+   text-primary: get-color($clr, 'neutral', 700),
+   text-primary-inversed: get-color($clr, 'neutral', 0),
+   text-secondary: get-color($clr, 'neutral', 500),
+
+
+   bg-primary: get-color($clr, 'neutral', 100),
+   bg-secondary: get-color($clr, 'neutral', 0),
+   bg-tertiary: get-color($clr, 'neutral', 300),
+   bg-placeholder: get-color($clr, 'neutral', 100),
+
+   separator: darken(get-color($clr, 'neutral', 100), 10%),
+
+   box-shadow-01: custom-box-shadow(1, get-color($clr, 'neutral', 500)),
+   box-shadow-02: custom-box-shadow(2, get-color($clr, 'neutral', 500)),
+   box-shadow-03: custom-box-shadow(3, get-color($clr, 'neutral', 500)),
+
+   body-bg-overlay: rgba(18, 18, 18, 0.9),
+   //#121212
+
+   link-01: get-color($clr, 'neutral', 700),
+   link-01-hover: get-color($clr, 'primary', 500),
+);
+
+
+$dark-theme: (
+   primary: get-color($clr, 'primary', 400),
+   secondary: get-color($clr, 'neutral', 400),
+   custom-secondary: get-color($clr, 'secondary', 400),
+   dark: get-color($clr, 'neutral', 700),
+   white:get-color($clr, 'neutral', 100),
+
+   text-primary: get-color($clr, 'neutral', 300),
+   text-primary-inversed: get-color($clr, 'neutral', 700),
+   text-secondary: get-color($clr, 'neutral', 400),
+
+   bg-primary: get-color($clr, 'neutral', 900),
+   bg-secondary: get-color($clr, 'neutral', 700),
+   bg-tertiary: get-color($clr, 'neutral', 900),
+   bg-placeholder: get-color($clr, 'neutral', 700),
+
+   separator: lighten(get-color($clr, 'neutral', 700), 10%),
+
+   box-shadow-01: custom-box-shadow(1, get-color($clr, 'primary', 100)),
+   box-shadow-02: custom-box-shadow(2, get-color($clr, 'primary', 100)),
+   box-shadow-03: custom-box-shadow(3, get-color($clr, 'primary', 100)),
+
+   // 88888888888
+   body-bg-overlay: rgba(18, 18, 18, 0.9),
+   //#121212
+
+   link-01: get-color($clr, 'neutral', 300),
+   link-01-hover: get-color($clr, 'primary', 400),
+);
+
+:root,
+[data-theme="light"] {
+   @include custom-css-variables-theme($light-theme);
+}
+
+[data-theme="dark"] {
+   @include custom-css-variables-theme($dark-theme);
+}

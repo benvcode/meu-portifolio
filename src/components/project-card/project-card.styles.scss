@@ -1,0 +1,38 @@
+// components/project-card/project-card.scss
+
+.card {
+   max-width: 100%;
+   border: none;
+   border-radius: 0;
+   //box-shadow: var(--box-shadow-01);
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+   background: var(--bg-secondary);
+
+   &:hover {
+      cursor: pointer;
+      transform: scale(1.025);
+      //box-shadow: var(--box-shadow-02);
+   }
+
+   &-github {
+      color: var(--primary);
+   }
+
+   &-text2 {
+      color: var(--primary);
+   }
+
+   &__item {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 5px 10px;
+      background-color: var(--bg-tertiary);
+      border-radius: 2px;
+      font-weight: 500;
+      //color: var(--dark);
+
+      &:not(:last-child) {
+         margin-right: 10px;
+      }
+   }
+}
