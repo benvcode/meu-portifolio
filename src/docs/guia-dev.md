@@ -17,3 +17,7 @@
    - [Freepik](https://www.freepik.com/)
    - [Veed - Convert video, audio and image to different formats](https://www.veed.io/convert)
    
+### Serviços de Hospedagem Grátis
+
+- [Vercel](https://vercel.com/)
+Nota: Alterar o diretório de saída padrão de `public`para `dist`, conforme necessário para o projeto
