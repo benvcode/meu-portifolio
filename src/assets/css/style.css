@@ -46402,7 +46402,7 @@ body {
   background: var(--bg-primary);
 }
 body::-webkit-scrollbar {
-  width: 0.6rem;
+  width: 0.45rem;
   border-radius: 0.5rem;
 }
 body::-webkit-scrollbar-thumb {
